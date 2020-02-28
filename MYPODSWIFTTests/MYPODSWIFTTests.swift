@@ -10,11 +10,8 @@ import XCTest
 @testable import MYPODSWIFT
 
 class MYPODSWIFTTests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
+    
+    var mypod: MYPOD!
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
@@ -29,6 +26,18 @@ class MYPODSWIFTTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    override func setUp() {
+        mypod = MYPOD()
+    }
+
+    func testAdd() {
+        XCTAssertEqual(mypod.add(a: 1, b: 1), 2)
+    }
+    
+    func testSub() {
+        XCTAssertEqual(mypod.sub(a: 5, b: 3), 2)
     }
 
 }
